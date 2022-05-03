@@ -33,8 +33,6 @@ export class AuthService {
     auth.email = email;
     auth.password = this.jwtService.encodePassword(password);
 
-    await this.repository.save(auth);
-
     return { status: HttpStatus.CREATED, error: null };
   }
 

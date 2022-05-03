@@ -3,6 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { join } from 'path';
 import { AppModule } from './app.module';
+import { protobufPackage } from './auth/auth.pb';
 import { HttpExceptionFilter } from './auth/filter/http-exception.filter';
 
 async function bootstrap() {
@@ -11,8 +12,8 @@ async function bootstrap() {
     {
       transport: Transport.GRPC,
       options: {
-        url: '0.0.0.0:5000',
-        package: 'auth',
+        url: '127.0.0.1:5003',
+        package: protobufPackage,
         protoPath: join(__dirname, './auth/auth.proto'),
       },
     },

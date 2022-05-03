@@ -12,7 +12,7 @@ import { AuthModule } from './auth/auth.module';
       database: 'micro_auth',
       username: 'postgres',
       password: '4040',
-      entities: ['dist/**/*.entity.{ts, js}'],
+      autoLoadEntities: true,
       synchronize: true,
     }),
   ],

@@ -16,6 +16,7 @@ export class AuthController implements AuthServiceController {
   constructor(private authService: AuthService) {}
 
   public async register(data: RegisterRequest): Promise<RegisterResponse> {
+    console.log(data);
     return this.authService.register(data);
   }
 
